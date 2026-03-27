@@ -18,9 +18,9 @@ namespace _0327_jótékonykodás {
         }
 
         void GenPairFile() {
-            List<string> oldNames = GetNames("idosNevek.txt");
-            List<string> youngNames = GetNames("diakNevek.txt");
-            StreamWriter fw = new StreamWriter("./parok.txt");
+            var oldNames = GetNames("idosNevek.txt");
+            var youngNames = GetNames("diakNevek.txt");
+            var fw = new StreamWriter("./parok.txt");
             for (int i = 0; i < oldNames.Count; i++) {
                 string[] pairs = GenStudentNames();
                 fw.WriteLine($"{oldNames[i]};{pairs[0]};{pairs[1]}");
@@ -75,16 +75,23 @@ namespace _0327_jótékonykodás {
             }
         }
 
+        private void EnaDef() {
+            actName_textBox.Enabled = true;
+            addName_button.Enabled = true;
+        }
+
         private void oldPpl_ToolStripMenuItem_Click(object sender, EventArgs e) {
             isStudent = false;
             state_label.Text = "Idősek";
             UpdateNames_listBox();
+            EnaDef();
         }
 
         private void student_ToolStripMenuItem_Click(object sender, EventArgs e) {
             isStudent = true;
             state_label.Text = "Diákok";
             UpdateNames_listBox();
+            EnaDef();
         }
 
         private void UpdateNames_listBox() {
@@ -98,16 +105,17 @@ namespace _0327_jótékonykodás {
             if(names_listBox.SelectedIndex >= 0) {
                 crntName = names_listBox.SelectedItem.ToString();
                 actName_textBox.Text = crntName;
-                changeButtonState(true);
+                ChangeButtonState(true);
             }
         }
 
         private void modifyName_button_Click(object sender, EventArgs e) {
-            if (!RmName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", crntName)) return;
+            if (!RmName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", crntName)) { return; }
             crntName = actName_textBox.Text;
             AddName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", crntName);
-            changeButtonState(false);
+            ChangeButtonState(false);
             UpdateNames_listBox();
+            actName_textBox.Text = "";
             MessageBox.Show($"{crntName} neve sikeresen módosítva", "Név módosítva", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -115,17 +123,24 @@ namespace _0327_jótékonykodás {
             string name2del = actName_textBox.Text;
             RmName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", name2del);
             crntName = "";
-            changeButtonState(false);
+            ChangeButtonState(false);
             UpdateNames_listBox();
+            actName_textBox.Text = "";
             MessageBox.Show($"{name2del} neve sikeresen eltávolítva", "Név törölve", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void AddName_button_Click(object sender, EventArgs e) {
             crntName = actName_textBox.Text;
+            if (crntName.Length <= 0) {
+                MessageBox.Show($"Kérem írjon be egy nevet!", "Név hozzáadás", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             AddName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", crntName);
-            changeButtonState(false);
+            ChangeButtonState(false);
             UpdateNames_listBox();
-            MessageBox.Show($"{crntName} neve sikeresen hozzáadva", "Név hozzáadva", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            actName_textBox.Text = "";
+            MessageBox.Show($"{crntName} neve sikeresen hozzáadva", "Név hozzáadás", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         string[] GenStudentNames() {
@@ -144,14 +159,13 @@ namespace _0327_jótékonykodás {
         }
 
         private void gen_toolStripMenuItem_Click(object sender, EventArgs e) {
-            GenStudentNames();
+            GenPairFile();
+            MessageBox.Show($"Párosítás sikeresen legenerálva", "Generácijó", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void changeButtonState(bool enabled) {
-            addName_button.Enabled = enabled;
-            delName_button.Enabled = enabled;
-            modifyName_button.Enabled = enabled;
-            actName_textBox.Enabled = enabled;
+        private void ChangeButtonState(bool ena) {
+            delName_button.Enabled = ena;
+            modifyName_button.Enabled = ena;
         }
 
 
