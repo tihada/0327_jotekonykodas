@@ -90,6 +90,25 @@ namespace _0327_jótékonykodás {
             name_textBox.Text = crntName;
         }
 
+        private void modifyName_button_Click(object sender, EventArgs e) {
+            RmName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", crntName);
+            AddName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", actName_textBox.Text);
+        }
+
+        private void delName_button_Click(object sender, EventArgs e) {
+            RmName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", actName_textBox.Text);
+        }
+
+        private void addName_button_Click(object sender, EventArgs e) {
+            AddName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", actName_textBox.Text);
+        }
+
+        string[] GenStudentNames() {
+            var rnd = new Random();
+            GetNames("./diakNevek.txt");
+        }
+
+
         /* feladat:
 * 2 fájl
   1.: idős emberek (jelentkeztek agórába hogy szeretnék megtanulni a számítógép használatot)

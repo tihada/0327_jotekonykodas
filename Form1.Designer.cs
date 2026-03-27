@@ -32,11 +32,11 @@
             this.Nevek = new System.Windows.Forms.Label();
             this.names_listBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.name_textBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.state_label = new System.Windows.Forms.Label();
+            this.actName_textBox = new System.Windows.Forms.TextBox();
+            this.addName_button = new System.Windows.Forms.Button();
+            this.modifyName_button = new System.Windows.Forms.Button();
+            this.delName_button = new System.Windows.Forms.Button();
+            this.gen_toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,6 +44,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.emberekToolStripMenuItem,
+            this.gen_toolStripMenuItem,
             this.creators_ToolStripMenuItem,
             this.exit_ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -117,44 +118,53 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Aktuális név";
             // 
-            // name_textBox
+            // actName_textBox
             // 
-            this.name_textBox.Location = new System.Drawing.Point(244, 93);
-            this.name_textBox.Name = "name_textBox";
-            this.name_textBox.Size = new System.Drawing.Size(147, 20);
-            this.name_textBox.TabIndex = 4;
+            this.actName_textBox.Location = new System.Drawing.Point(244, 93);
+            this.actName_textBox.Name = "actName_textBox";
+            this.actName_textBox.Size = new System.Drawing.Size(147, 20);
+            this.actName_textBox.TabIndex = 4;
             // 
-            // button1
+            // addName_button
             // 
-            this.button1.BackColor = System.Drawing.Color.Chartreuse;
-            this.button1.Location = new System.Drawing.Point(244, 164);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(62, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Hozzáad";
-            this.button1.UseVisualStyleBackColor = false;
+            this.addName_button.BackColor = System.Drawing.Color.Chartreuse;
+            this.addName_button.Location = new System.Drawing.Point(244, 164);
+            this.addName_button.Name = "addName_button";
+            this.addName_button.Size = new System.Drawing.Size(62, 23);
+            this.addName_button.TabIndex = 5;
+            this.addName_button.Text = "Hozzáad";
+            this.addName_button.UseVisualStyleBackColor = false;
+            this.addName_button.Click += new System.EventHandler(this.addName_button_Click);
             // 
-            // button2
+            // modifyName_button
             // 
-            this.button2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(244, 135);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(147, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Módosít";
-            this.button2.UseVisualStyleBackColor = false;
+            this.modifyName_button.BackColor = System.Drawing.Color.RoyalBlue;
+            this.modifyName_button.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.modifyName_button.Location = new System.Drawing.Point(244, 135);
+            this.modifyName_button.Name = "modifyName_button";
+            this.modifyName_button.Size = new System.Drawing.Size(147, 23);
+            this.modifyName_button.TabIndex = 6;
+            this.modifyName_button.Text = "Módosít";
+            this.modifyName_button.UseVisualStyleBackColor = false;
+            this.modifyName_button.Click += new System.EventHandler(this.modifyName_button_Click);
             // 
-            // button3
+            // delName_button
             // 
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.Location = new System.Drawing.Point(316, 164);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Töröl";
-            this.button3.UseVisualStyleBackColor = false;
+            this.delName_button.BackColor = System.Drawing.Color.Red;
+            this.delName_button.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.delName_button.Location = new System.Drawing.Point(316, 164);
+            this.delName_button.Name = "delName_button";
+            this.delName_button.Size = new System.Drawing.Size(75, 23);
+            this.delName_button.TabIndex = 7;
+            this.delName_button.Text = "Töröl";
+            this.delName_button.UseVisualStyleBackColor = false;
+            this.delName_button.Click += new System.EventHandler(this.delName_button_Click);
+            // 
+            // gen_toolStripMenuItem
+            // 
+            this.gen_toolStripMenuItem.Name = "gen_toolStripMenuItem";
+            this.gen_toolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.gen_toolStripMenuItem.Text = "Generálás";
             // 
             // state_label
             // 
@@ -170,11 +180,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.state_label);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.name_textBox);
+            this.Controls.Add(this.delName_button);
+            this.Controls.Add(this.modifyName_button);
+            this.Controls.Add(this.addName_button);
+            this.Controls.Add(this.actName_textBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.names_listBox);
             this.Controls.Add(this.Nevek);
@@ -200,11 +209,11 @@
         private System.Windows.Forms.Label Nevek;
         private System.Windows.Forms.ListBox names_listBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox name_textBox;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label state_label;
+        private System.Windows.Forms.Button addName_button;
+        private System.Windows.Forms.Button modifyName_button;
+        private System.Windows.Forms.Button delName_button;
+        private System.Windows.Forms.TextBox actName_textBox;
+        private System.Windows.Forms.ToolStripMenuItem gen_toolStripMenuItem;
     }
 }
 
