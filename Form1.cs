@@ -108,19 +108,22 @@ namespace _0327_jótékonykodás {
 
         private void modifyName_button_Click(object sender, EventArgs e) {
             RmName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", crntName);
-            AddName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", actName_textBox.Text);
+            crntName = actName_textBox.Text;
+            AddName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", crntName);
             loadNames();
             MessageBox.Show($"{crntName} neve sikeresen módosítva", "Név módosítva", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void delName_button_Click(object sender, EventArgs e) {
             RmName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", actName_textBox.Text);
+            crntName = "";
             loadNames();
             MessageBox.Show($"{crntName} neve sikeresen eltávolítva", "Név törölve", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void addName_button_Click(object sender, EventArgs e) {
-            AddName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", actName_textBox.Text);
+            crntName = actName_textBox.Text;
+            AddName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", crntName);
             loadNames();
             MessageBox.Show($"{crntName} neve sikeresen hozzáadva", "Név hozzáadva", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
