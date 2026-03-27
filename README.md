@@ -14,12 +14,12 @@ Szép és jeles volt benne, megjelent.
 
 ## A projektről
 ### Készítők:
--Tihanyi Ádám
--Vörös Dávid
--Fejéregyházi Attila
+- Tihanyi Ádám
+- Vörös Dávid
+- Fejéregyházi Attila
 
 ### Nem készítők:
--Ács-Sánta Bálint
+- Ács-Sánta Bálint
 
 ### Tartalom:
 Ez egy jótékonykodásról szóló program ami kb 1.5x több diákot tartalmaz mint időset alapból. Az a lényeg hogy egy időshöz legyen 2 diák hogy megtanítsák doomozni, mert az mindenen elfut.
