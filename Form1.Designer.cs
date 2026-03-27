@@ -82,6 +82,7 @@
             this.gen_toolStripMenuItem.Name = "gen_toolStripMenuItem";
             this.gen_toolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.gen_toolStripMenuItem.Text = "Generálás";
+            this.gen_toolStripMenuItem.Click += new System.EventHandler(this.gen_toolStripMenuItem_Click);
             // 
             // creators_ToolStripMenuItem
             // 
