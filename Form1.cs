@@ -26,7 +26,7 @@ namespace _0327_jótékonykodás {
                 fw.WriteLine($"{oldNames[i]};{pairs[0]};{pairs[1]}");
             }
             fw.Close();
-        } 
+        }
 
         void AddName(string filepath, string name) {
             var fw = new StreamWriter(filepath, true);
@@ -34,21 +34,23 @@ namespace _0327_jótékonykodás {
             fw.Close();
         }
 
-        void RmName(string filepath, string name) {
+        bool RmName(string filepath, string name) {
             var names = GetNames(filepath);
             var fw = new StreamWriter(filepath);
             if (!names.Remove(name)) {
                 MessageBox.Show("Nincs ilyen név a listában!", "Figyelem!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                fw.Close();
+                return false;
             }
-            else {
-                for (Int32 i = 0; i < names.Count; i++) {
-                    fw.Write($"{names[i]}");
-                    if (i != names.Count - 1) {
-                        fw.Write("\n");
-                    }
+
+            for (Int32 i = 0; i < names.Count; i++) {
+                fw.Write($"{names[i]}");
+                if (i != names.Count - 1) {
+                    fw.Write("\n");
                 }
             }
             fw.Close();
+            return true;
         }
 
         List<string> GetNames(string filepath) {
@@ -136,6 +138,10 @@ namespace _0327_jótékonykodás {
             while (choosenNames[0] == choosenNames[1]);
 
             return choosenNames;
+        }
+
+        private void gen_toolStripMenuItem_Click(object sender, EventArgs e) {
+            GenStudentNames();
         }
 
 
