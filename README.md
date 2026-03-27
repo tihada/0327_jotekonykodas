@@ -1,5 +1,6 @@
 # 0327_jótékonykodás
 ## Előszó
+```
 Midőn ezt írtam, tiszta volt az ég.
 Zöld ág virított a föld ormain.
 Munkában élt az ember mint a hangya:
@@ -11,6 +12,8 @@ Az emberüdvöt, melyért fáradott.
 Ünnepre fordúlt a természet, ami
 Szép és jeles volt benne, megjelent. 
 (...)
+```
+*Vörösmarty Mihály*
 
 ## A projektről
 ### Készítők:
@@ -25,6 +28,7 @@ Szép és jeles volt benne, megjelent.
 Ez egy jótékonykodásról szóló program ami kb 1.5x több diákot tartalmaz mint időset alapból. Az a lényeg hogy egy időshöz legyen 2 diák hogy megtanítsák doomozni, mert az mindenen elfut.
 
 ## Epilógus
+```
 (...)
 Csöndes fészket zöld lomb árnyán,
 Hova múzsám el-elvárnám,
@@ -41,3 +45,5 @@ Egy nyugalom vár, a végső:
 Mert hogy’ szálljon,
 Bár kalitja már kinyitva,
 Rab madár is, szegett szárnyon?
+```
+*Arany János*
