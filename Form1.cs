@@ -103,6 +103,21 @@ namespace _0327_jótékonykodás {
             AddName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", actName_textBox.Text);
         }
 
+        string[] GenStudentNames() {
+            var rnd = new Random();
+            var names = GetNames("./diakNevek.txt");
+            var choosenNames = new string[2];
+            choosenNames[0] = names[rnd.Next(names.Count)];
+            choosenNames[1] = choosenNames[0];
+
+            do {
+                choosenNames[1] = names[rnd.Next(names.Count)];
+            }
+            while (choosenNames[0] == choosenNames[1]);
+
+            return choosenNames;
+        }
+
 
         /* feladat:
 * 2 fájl
