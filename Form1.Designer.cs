@@ -49,12 +49,14 @@
             this.kilépésToolStripMenuItem.Name = "kilépésToolStripMenuItem";
             this.kilépésToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.kilépésToolStripMenuItem.Text = "Kilépés";
+            this.kilépésToolStripMenuItem.Click += new System.EventHandler(this.kilépésToolStripMenuItem_Click);
             // 
             // készítőkToolStripMenuItem
             // 
             this.készítőkToolStripMenuItem.Name = "készítőkToolStripMenuItem";
             this.készítőkToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.készítőkToolStripMenuItem.Text = "Készítők";
+            this.készítőkToolStripMenuItem.Click += new System.EventHandler(this.készítőkToolStripMenuItem_Click);
             // 
             // emberekToolStripMenuItem
             // 
@@ -85,7 +87,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Agóra jótékonykodás";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
