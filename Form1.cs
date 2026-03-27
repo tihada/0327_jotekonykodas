@@ -60,6 +60,20 @@ namespace _0327_jótékonykodás {
             }
         }
 
+        private void oldPpl_ToolStripMenuItem_Click(object sender, EventArgs e) {
+            names_listBox.Items.Clear();
+            foreach (var name in GetNames("./idosNevek.txt")) {
+                names_listBox.Items.Add(name);
+            }
+        }
+
+        private void student_ToolStripMenuItem_Click(object sender, EventArgs e) {
+            names_listBox.Items.Clear();
+            foreach (var name in GetNames("./diakNevek.txt")) {
+                names_listBox.Items.Add(name);
+            }
+        }
+
         /* feladat:
 * 2 fájl
   1.: idős emberek (jelentkeztek agórába hogy szeretnék megtanulni a számítógép használatot)

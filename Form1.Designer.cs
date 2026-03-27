@@ -25,8 +25,8 @@
         private void InitializeComponent() {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.emberekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.idősToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.diákToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.oldPpl_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.student_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.creators_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exit_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Nevek = new System.Windows.Forms.Label();
@@ -54,23 +54,25 @@
             // emberekToolStripMenuItem
             // 
             this.emberekToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.idősToolStripMenuItem,
-            this.diákToolStripMenuItem});
+            this.oldPpl_ToolStripMenuItem,
+            this.student_ToolStripMenuItem});
             this.emberekToolStripMenuItem.Name = "emberekToolStripMenuItem";
             this.emberekToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.emberekToolStripMenuItem.Text = "Emberek";
             // 
-            // idősToolStripMenuItem
+            // oldPpl_ToolStripMenuItem
             // 
-            this.idősToolStripMenuItem.Name = "idősToolStripMenuItem";
-            this.idősToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
-            this.idősToolStripMenuItem.Text = "Idős";
+            this.oldPpl_ToolStripMenuItem.Name = "oldPpl_ToolStripMenuItem";
+            this.oldPpl_ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.oldPpl_ToolStripMenuItem.Text = "Idős";
+            this.oldPpl_ToolStripMenuItem.Click += new System.EventHandler(this.oldPpl_ToolStripMenuItem_Click);
             // 
-            // diákToolStripMenuItem
+            // student_ToolStripMenuItem
             // 
-            this.diákToolStripMenuItem.Name = "diákToolStripMenuItem";
-            this.diákToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
-            this.diákToolStripMenuItem.Text = "Diák";
+            this.student_ToolStripMenuItem.Name = "student_ToolStripMenuItem";
+            this.student_ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.student_ToolStripMenuItem.Text = "Diák";
+            this.student_ToolStripMenuItem.Click += new System.EventHandler(this.student_ToolStripMenuItem_Click);
             // 
             // creators_ToolStripMenuItem
             // 
@@ -179,8 +181,8 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem emberekToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem idősToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem diákToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem oldPpl_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem student_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem creators_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exit_ToolStripMenuItem;
         private System.Windows.Forms.Label Nevek;
