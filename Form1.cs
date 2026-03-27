@@ -104,7 +104,7 @@ namespace _0327_jótékonykodás {
         }
 
         private void modifyName_button_Click(object sender, EventArgs e) {
-            RmName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", crntName);
+            if (!RmName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", crntName)) return;
             crntName = actName_textBox.Text;
             AddName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", actName_textBox.Text);
             UpdateNames_listBox();
