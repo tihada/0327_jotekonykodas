@@ -18,7 +18,7 @@ namespace _0327_jótékonykodás {
         }
         Random rnd = new Random();
 
-        string[] GenPairFile() {
+        void GenPairFile() {
             List<string> oldNames = GetNames("idosNevek.txt");
             List<string> youngNames = GetNames("diakNevek.txt");
             StreamWriter fw = new StreamWriter("parok.txt");
@@ -105,21 +105,21 @@ namespace _0327_jótékonykodás {
         private void modifyName_button_Click(object sender, EventArgs e) {
             RmName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", crntName);
             crntName = actName_textBox.Text;
-            AddName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", crntName);
-            loadNames();
+            AddName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", actName_textBox.Text);
+            UpdateNames_listBox();
             MessageBox.Show($"{crntName} neve sikeresen módosítva", "Név módosítva", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void delName_button_Click(object sender, EventArgs e) {
             RmName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", actName_textBox.Text);
-            loadNames();
+            crntName = "";
+            UpdateNames_listBox();
             MessageBox.Show($"{crntName} neve sikeresen eltávolítva", "Név törölve", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void addName_button_Click(object sender, EventArgs e) {
+        private void AddName_button_Click(object sender, EventArgs e) {
             AddName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", actName_textBox.Text);
-            loadNames();
-            MessageBox.Show($"{crntName} neve sikeresen hozzáadva", "Név hozzáadva", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            UpdateNames_listBox();
         }
 
         string[] GenStudentNames() {
