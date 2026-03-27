@@ -28,6 +28,8 @@
             this.oldPpl_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.student_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gen_toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generálásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hozzárendelésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.creators_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exit_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Nevek = new System.Windows.Forms.Label();
@@ -38,8 +40,6 @@
             this.modifyName_button = new System.Windows.Forms.Button();
             this.delName_button = new System.Windows.Forms.Button();
             this.state_label = new System.Windows.Forms.Label();
-            this.generálásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hozzárendelésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,7 +59,7 @@
             this.exit_ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1023, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -94,6 +94,20 @@
             this.gen_toolStripMenuItem.Name = "gen_toolStripMenuItem";
             this.gen_toolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.gen_toolStripMenuItem.Text = "Párok";
+            // 
+            // generálásToolStripMenuItem
+            // 
+            this.generálásToolStripMenuItem.Name = "generálásToolStripMenuItem";
+            this.generálásToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.generálásToolStripMenuItem.Text = "Generálás";
+            this.generálásToolStripMenuItem.Click += new System.EventHandler(this.gen_toolStripMenuItem_Click);
+            // 
+            // hozzárendelésToolStripMenuItem
+            // 
+            this.hozzárendelésToolStripMenuItem.Name = "hozzárendelésToolStripMenuItem";
+            this.hozzárendelésToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.hozzárendelésToolStripMenuItem.Text = "Hozzárendelés";
+            this.hozzárendelésToolStripMenuItem.Click += new System.EventHandler(this.hozzárendelésToolStripMenuItem_Click);
             // 
             // creators_ToolStripMenuItem
             // 
@@ -192,25 +206,11 @@
             this.state_label.TabIndex = 8;
             this.state_label.Text = ".";
             // 
-            // generálásToolStripMenuItem
-            // 
-            this.generálásToolStripMenuItem.Name = "generálásToolStripMenuItem";
-            this.generálásToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.generálásToolStripMenuItem.Text = "Generálás";
-            this.generálásToolStripMenuItem.Click += new System.EventHandler(this.gen_toolStripMenuItem_Click);
-            // 
-            // hozzárendelésToolStripMenuItem
-            // 
-            this.hozzárendelésToolStripMenuItem.Name = "hozzárendelésToolStripMenuItem";
-            this.hozzárendelésToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.hozzárendelésToolStripMenuItem.Text = "Hozzárendelés";
-            this.hozzárendelésToolStripMenuItem.Click += new System.EventHandler(this.hozzárendelésToolStripMenuItem_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(562, 48);
+            this.label2.Location = new System.Drawing.Point(714, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 20);
             this.label2.TabIndex = 9;
@@ -222,14 +222,14 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(414, 109);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(212, 290);
+            this.listBox1.Size = new System.Drawing.Size(416, 290);
             this.listBox1.TabIndex = 10;
             this.listBox1.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(447, 93);
+            this.label3.Location = new System.Drawing.Point(549, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 13);
             this.label3.TabIndex = 12;
@@ -239,7 +239,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(465, 77);
+            this.label4.Location = new System.Drawing.Point(567, 74);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 13);
             this.label4.TabIndex = 13;
@@ -249,9 +249,9 @@
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(644, 96);
+            this.listBox2.Location = new System.Drawing.Point(847, 96);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(144, 303);
+            this.listBox2.Size = new System.Drawing.Size(164, 303);
             this.listBox2.TabIndex = 14;
             this.listBox2.Visible = false;
             this.listBox2.DoubleClick += new System.EventHandler(this.listBox2_DoubleClick);
@@ -259,7 +259,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(693, 77);
+            this.label5.Location = new System.Drawing.Point(896, 77);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 13);
             this.label5.TabIndex = 15;
@@ -271,7 +271,7 @@
             this.button1.BackColor = System.Drawing.Color.RoyalBlue;
             this.button1.Enabled = false;
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(531, 409);
+            this.button1.Location = new System.Drawing.Point(700, 405);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(147, 23);
             this.button1.TabIndex = 16;
@@ -284,7 +284,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1023, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.listBox2);

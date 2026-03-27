@@ -161,7 +161,8 @@ namespace _0327_jótékonykodás {
         }
 
         private void gen_toolStripMenuItem_Click(object sender, EventArgs e) {
-
+            GenPairFile();
+            MessageBox.Show("Párosítás sikeresen legenerálva." , "Párosítás generálása", MessageBoxButtons.OK, MessageBoxIcon.Information );
         }
 
         private void ChangeButtonState(bool ena) {
@@ -176,19 +177,90 @@ namespace _0327_jótékonykodás {
             label3.Visible = true;
             label4.Visible = true;
             label5.Visible = true;
+            List<string> nevek = GetNames("./idosNevek.txt");
+            string[] nevekTomb = new string[nevek.Count];
+            for (int i = 0; i < nevekTomb.Length; i++) {
+                nevekTomb[i] = nevek[i];
+            }
+            listBox1.Items.Clear();
+            listBox1.Items.AddRange(nevekTomb);
+            listBox1.SelectedIndex = 0;
+
+            List<string> diakok = GetNames("./diakNevek.txt");
+            string[] diakokTomb = new string[diakok.Count];
+            for (int i = 0; i < diakokTomb.Length; i++) {
+                diakokTomb[i] = diakok[i];
+            }
+            listBox2.Items.Clear();
+            listBox2.Items.AddRange(diakokTomb);
+            button1.Enabled = true;
         }
 
         private void listBox2_DoubleClick(object sender, EventArgs e) {
-
+            if (listBox1.SelectedIndex == -1 || listBox2.SelectedIndex == -1) return;
+            string idos;
+            string select = listBox1.SelectedItem.ToString();
+            string[] idk = select.Split('-');
+            for (int i = 0; i < idk.Length; i++) {
+                idk[i] = idk[i].Trim(); }
+            string diak = listBox2.SelectedItem.ToString();
+            if (idk.Contains(diak)) {
+                MessageBox.Show("Egy időshőz 2 különböző diákot kell rendelni.", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            string[] ujidos = new string[3];
+            ujidos[0] = idk[0];
+            if(idk.Length == 1 ) {
+                ujidos[1] = diak;
+                ujidos[2] = "";
+            } else if(idk.Length == 2 || idk[2] == "") {
+                ujidos[1] = idk[1];
+                ujidos[2] = diak;
+            } else {
+                ujidos[1] = diak;
+                ujidos[2] = "";
+            }
+            idos = $"{ujidos[0]} - {ujidos[1]} - {ujidos[2]}";
+            listBox1.Items[listBox1.SelectedIndex] = idos;
+            if (ujidos[1] != "" && ujidos[2] != "") {
+                if(listBox1.SelectedIndex == listBox1.Items.Count - 1) {
+                    MessageBox.Show("Végigértünk az idősök során. Valószínűleg kész a hozzárendelés.", "Lista vége", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                } else {
+                    listBox1.SelectedIndex += 1;
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e) {
+            List<string[]> rendelesek = new List<string[]>();
+            foreach(var item in listBox1.Items) {
+                string[] add = item.ToString().Split('-');
+                if(add.Length < 3) {
+                    MessageBox.Show("A hozzárendelést nem lehet elmenteni mert nincs mindegyik időshöz 2 diák hozzárendelve.", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                for(int i = 0; i < add.Length; i++) {
+                    add[i] = add[i].Trim();
+                    if (add[i] == "") {
+                        MessageBox.Show("A hozzárendelést nem lehet elmenteni mert nincs mindegyik időshöz 2 diák hozzárendelve.", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+                rendelesek.Add(add);
+            }
+
+            var fw = new StreamWriter("./hozzarendeles_parok.txt");
+            foreach (var item in rendelesek) {
+                fw.WriteLine($"{item[0]};{item[1]};{item[2]}");
+            }
+            fw.Close();
             listBox1.Visible = false;
             listBox2.Visible = false;
             button1.Visible = false;
             label3.Visible = false;
             label4.Visible = false;
             label5.Visible = false;
+            MessageBox.Show("A hozzárendelés sikeresen elmentve.", "Hozzárendelés elmentve", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
