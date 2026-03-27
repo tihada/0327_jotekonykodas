@@ -128,6 +128,7 @@
             // 
             // actName_textBox
             // 
+            this.actName_textBox.Enabled = false;
             this.actName_textBox.Location = new System.Drawing.Point(244, 93);
             this.actName_textBox.Name = "actName_textBox";
             this.actName_textBox.Size = new System.Drawing.Size(147, 20);
@@ -136,6 +137,7 @@
             // addName_button
             // 
             this.addName_button.BackColor = System.Drawing.Color.Chartreuse;
+            this.addName_button.Enabled = false;
             this.addName_button.Location = new System.Drawing.Point(244, 164);
             this.addName_button.Name = "addName_button";
             this.addName_button.Size = new System.Drawing.Size(62, 23);
@@ -147,6 +149,7 @@
             // modifyName_button
             // 
             this.modifyName_button.BackColor = System.Drawing.Color.RoyalBlue;
+            this.modifyName_button.Enabled = false;
             this.modifyName_button.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.modifyName_button.Location = new System.Drawing.Point(244, 135);
             this.modifyName_button.Name = "modifyName_button";
@@ -159,6 +162,7 @@
             // delName_button
             // 
             this.delName_button.BackColor = System.Drawing.Color.Red;
+            this.delName_button.Enabled = false;
             this.delName_button.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.delName_button.Location = new System.Drawing.Point(316, 164);
             this.delName_button.Name = "delName_button";

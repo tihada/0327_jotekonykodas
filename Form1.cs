@@ -95,34 +95,37 @@ namespace _0327_jótékonykodás {
         }
 
         private void names_listBox_DBLClick(object sender, EventArgs e) {
-            try {
+            if(names_listBox.SelectedIndex >= 0) {
                 crntName = names_listBox.SelectedItem.ToString();
+                actName_textBox.Text = crntName;
+                changeButtonState(true);
             }
-            catch {
-                return;
-            }
-
-            actName_textBox.Text = crntName;
         }
 
         private void modifyName_button_Click(object sender, EventArgs e) {
             if (!RmName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", crntName)) return;
             crntName = actName_textBox.Text;
-            AddName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", actName_textBox.Text);
+            AddName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", crntName);
+            changeButtonState(false);
             UpdateNames_listBox();
             MessageBox.Show($"{crntName} neve sikeresen módosítva", "Név módosítva", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void delName_button_Click(object sender, EventArgs e) {
-            RmName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", actName_textBox.Text);
+            string name2del = actName_textBox.Text;
+            RmName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", name2del);
             crntName = "";
+            changeButtonState(false);
             UpdateNames_listBox();
-            MessageBox.Show($"{crntName} neve sikeresen eltávolítva", "Név törölve", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"{name2del} neve sikeresen eltávolítva", "Név törölve", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void AddName_button_Click(object sender, EventArgs e) {
-            AddName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", actName_textBox.Text);
+            crntName = actName_textBox.Text;
+            AddName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", crntName);
+            changeButtonState(false);
             UpdateNames_listBox();
+            MessageBox.Show($"{crntName} neve sikeresen hozzáadva", "Név hozzáadva", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         string[] GenStudentNames() {
@@ -143,6 +146,14 @@ namespace _0327_jótékonykodás {
         private void gen_toolStripMenuItem_Click(object sender, EventArgs e) {
             GenStudentNames();
         }
+
+        private void changeButtonState(bool enabled) {
+            addName_button.Enabled = enabled;
+            delName_button.Enabled = enabled;
+            modifyName_button.Enabled = enabled;
+            actName_textBox.Enabled = enabled;
+        }
+
 
 
         /* feladat:
