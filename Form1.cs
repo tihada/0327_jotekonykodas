@@ -11,6 +11,8 @@ using System.Windows.Forms;
 
 namespace _0327_jótékonykodás {
     public partial class Form1 : Form {
+        public bool isStudent = false;
+        public string crntName;
         public Form1() {
             InitializeComponent();
         }
@@ -61,6 +63,8 @@ namespace _0327_jótékonykodás {
         }
 
         private void oldPpl_ToolStripMenuItem_Click(object sender, EventArgs e) {
+            isStudent = false;
+            state_label.Text = "Idősek";
             names_listBox.Items.Clear();
             foreach (var name in GetNames("./idosNevek.txt")) {
                 names_listBox.Items.Add(name);
@@ -68,6 +72,8 @@ namespace _0327_jótékonykodás {
         }
 
         private void student_ToolStripMenuItem_Click(object sender, EventArgs e) {
+            isStudent = true;
+            state_label.Text = "Diákok";
             names_listBox.Items.Clear();
             foreach (var name in GetNames("./diakNevek.txt")) {
                 names_listBox.Items.Add(name);
