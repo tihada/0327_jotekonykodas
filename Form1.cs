@@ -16,15 +16,16 @@ namespace _0327_jótékonykodás {
         public Form1() {
             InitializeComponent();
         }
-        Random rnd = new Random();
 
-        string[] GenPairFile() {
+        void GenPairFile() {
             List<string> oldNames = GetNames("idosNevek.txt");
             List<string> youngNames = GetNames("diakNevek.txt");
-            StreamWriter fw = new StreamWriter("parok.txt");
+            StreamWriter fw = new StreamWriter("./parok.txt");
             for (int i = 0; i < oldNames.Count; i++) {
-
+                string[] pairs = GenStudentNames();
+                fw.WriteLine($"{oldNames[i]};{pairs[0]};{pairs[1]}");
             }
+            fw.Close();
         } 
 
         void AddName(string filepath, string name) {
