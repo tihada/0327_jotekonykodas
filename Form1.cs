@@ -16,6 +16,16 @@ namespace _0327_jótékonykodás {
         public Form1() {
             InitializeComponent();
         }
+        Random rnd = new Random();
+
+        string[] GenPairFile() {
+            List<string> oldNames = GetNames("idosNevek.txt");
+            List<string> youngNames = GetNames("diakNevek.txt");
+            StreamWriter fw = new StreamWriter("parok.txt");
+            for (int i = 0; i < oldNames.Count; i++) {
+
+            }
+        } 
 
         void AddName(string filepath, string name) {
             var fw = new StreamWriter(filepath, true);
