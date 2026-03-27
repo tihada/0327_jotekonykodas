@@ -21,7 +21,7 @@ namespace _0327_jótékonykodás {
         }
 
         void GenPairFile() {
-            var fw = new StreamWriter("./parok.txt");
+            var fw = new StreamWriter("./random_parok.txt");
 
             foreach (var name in GetNames("idosNevek.txt")) {
                 string[] pairs = GenStudentNames();
