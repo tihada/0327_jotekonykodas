@@ -13,6 +13,8 @@ Az emberüdvöt, melyért fáradott.
 Szép és jeles volt benne, megjelent. 
 (...)
 ```
+*Vörösmarty Mihály*
+
 ## A projektről
 ### Készítők:
 - Tihanyi Ádám
@@ -44,3 +46,4 @@ Mert hogy’ szálljon,
 Bár kalitja már kinyitva,
 Rab madár is, szegett szárnyon?
 ```
+*Arany János*
