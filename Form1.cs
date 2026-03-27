@@ -89,7 +89,17 @@ namespace _0327_jótékonykodás {
 
         string[] GenStudentNames() {
             var rnd = new Random();
-            GetNames("./diakNevek.txt");
+            var names = GetNames("./diakNevek.txt");
+            var choosenNames = new string[2];
+            choosenNames[0] = names[rnd.Next(names.Count)];
+            choosenNames[1] = choosenNames[0];
+
+            do {
+                choosenNames[1] = names[rnd.Next(names.Count)];
+            }
+            while (choosenNames[0] == choosenNames[1]);
+
+            return choosenNames;
         }
 
 
