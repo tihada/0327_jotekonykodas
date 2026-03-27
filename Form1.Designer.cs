@@ -47,6 +47,7 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -280,11 +281,21 @@
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(414, 405);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(190, 26);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Hozzárendelés a kijelölt időshöz:\r\na diák nevére történő duplakattintással";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1023, 450);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.listBox2);
@@ -337,6 +348,7 @@
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label6;
     }
 }
 
