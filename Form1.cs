@@ -13,18 +13,21 @@ namespace _0327_jótékonykodás {
     public partial class Form1 : Form {
         public bool isStudent = false;
         public string crntName;
+        Random rnd = new Random();
+
+
         public Form1() {
             InitializeComponent();
         }
 
         void GenPairFile() {
-            var oldNames = GetNames("./idosNevek.txt");
-            var fw = new StreamWriter("./random_parok.txt");
+            var fw = new StreamWriter("./parok.txt");
 
-            for (int i = 0; i < oldNames.Count; i++) {
-                string[] pairs = GenStudentNames();  
-                fw.WriteLine($"{oldNames[i]};{pairs[0]};{pairs[1]}");
+            foreach (var name in GetNames("idosNevek.txt")) {
+                string[] pairs = GenStudentNames();
+                fw.WriteLine($"{name};{pairs[0]};{pairs[1]}");
             }
+
             fw.Close();
         }
 
@@ -144,9 +147,8 @@ namespace _0327_jótékonykodás {
         }
 
         string[] GenStudentNames() {
-            var rnd = new Random();
             var names = GetNames("./diakNevek.txt");
-            var choosenNames = new string[2];
+            string[] choosenNames = new string[2];
             choosenNames[0] = names[rnd.Next(names.Count)];
             choosenNames[1] = choosenNames[0];
 
