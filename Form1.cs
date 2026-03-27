@@ -18,11 +18,11 @@ namespace _0327_jótékonykodás {
         }
 
         void GenPairFile() {
-            var oldNames = GetNames("idosNevek.txt");
-            var youngNames = GetNames("diakNevek.txt");
-            var fw = new StreamWriter("./parok.txt");
+            var oldNames = GetNames("./idosNevek.txt");
+            var fw = new StreamWriter("./random_parok.txt");
+
             for (int i = 0; i < oldNames.Count; i++) {
-                string[] pairs = GenStudentNames();
+                string[] pairs = GenStudentNames();  
                 fw.WriteLine($"{oldNames[i]};{pairs[0]};{pairs[1]}");
             }
             fw.Close();
@@ -159,13 +159,34 @@ namespace _0327_jótékonykodás {
         }
 
         private void gen_toolStripMenuItem_Click(object sender, EventArgs e) {
-            GenPairFile();
-            MessageBox.Show($"Párosítás sikeresen legenerálva", "Generácijó", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
 
         private void ChangeButtonState(bool ena) {
             delName_button.Enabled = ena;
             modifyName_button.Enabled = ena;
+        }
+
+        private void hozzárendelésToolStripMenuItem_Click(object sender, EventArgs e) {
+            listBox1.Visible = true;
+            listBox2.Visible = true;
+            button1.Visible = true;
+            label3.Visible = true;
+            label4.Visible = true;
+            label5.Visible = true;
+        }
+
+        private void listBox2_DoubleClick(object sender, EventArgs e) {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+            listBox1.Visible = false;
+            listBox2.Visible = false;
+            button1.Visible = false;
+            label3.Visible = false;
+            label4.Visible = false;
+            label5.Visible = false;
         }
 
 
