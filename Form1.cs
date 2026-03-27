@@ -80,6 +80,16 @@ namespace _0327_jótékonykodás {
             }
         }
 
+        private void names_listBox_DBLClick(object sender, EventArgs e) {
+            try {
+                crntName = names_listBox.SelectedItem.ToString();
+            } catch {
+                return;
+            }
+
+            name_textBox.Text = crntName;
+        }
+
         /* feladat:
 * 2 fájl
   1.: idős emberek (jelentkeztek agórába hogy szeretnék megtanulni a számítógép használatot)

@@ -32,7 +32,7 @@
             this.Nevek = new System.Windows.Forms.Label();
             this.names_listBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.name_textBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -64,14 +64,14 @@
             // oldPpl_ToolStripMenuItem
             // 
             this.oldPpl_ToolStripMenuItem.Name = "oldPpl_ToolStripMenuItem";
-            this.oldPpl_ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.oldPpl_ToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
             this.oldPpl_ToolStripMenuItem.Text = "Idős";
             this.oldPpl_ToolStripMenuItem.Click += new System.EventHandler(this.oldPpl_ToolStripMenuItem_Click);
             // 
             // student_ToolStripMenuItem
             // 
             this.student_ToolStripMenuItem.Name = "student_ToolStripMenuItem";
-            this.student_ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.student_ToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
             this.student_ToolStripMenuItem.Text = "Diák";
             this.student_ToolStripMenuItem.Click += new System.EventHandler(this.student_ToolStripMenuItem_Click);
             // 
@@ -106,6 +106,7 @@
             this.names_listBox.Name = "names_listBox";
             this.names_listBox.Size = new System.Drawing.Size(188, 355);
             this.names_listBox.TabIndex = 2;
+            this.names_listBox.DoubleClick += new System.EventHandler(this.names_listBox_DBLClick);
             // 
             // label1
             // 
@@ -116,12 +117,12 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Aktuális név";
             // 
-            // textBox1
+            // name_textBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(244, 93);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(147, 20);
-            this.textBox1.TabIndex = 4;
+            this.name_textBox.Location = new System.Drawing.Point(244, 93);
+            this.name_textBox.Name = "name_textBox";
+            this.name_textBox.Size = new System.Drawing.Size(147, 20);
+            this.name_textBox.TabIndex = 4;
             // 
             // button1
             // 
@@ -173,7 +174,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.name_textBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.names_listBox);
             this.Controls.Add(this.Nevek);
@@ -199,7 +200,7 @@
         private System.Windows.Forms.Label Nevek;
         private System.Windows.Forms.ListBox names_listBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox name_textBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
