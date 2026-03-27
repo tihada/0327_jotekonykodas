@@ -141,7 +141,7 @@
             this.addName_button.TabIndex = 5;
             this.addName_button.Text = "Hozzáad";
             this.addName_button.UseVisualStyleBackColor = false;
-            this.addName_button.Click += new System.EventHandler(this.addName_button_Click);
+            this.addName_button.Click += new System.EventHandler(this.AddName_button_Click);
             // 
             // modifyName_button
             // 
