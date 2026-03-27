@@ -87,7 +87,7 @@ namespace _0327_jótékonykodás {
                 return;
             }
 
-            name_textBox.Text = crntName;
+            actName_textBox.Text = crntName;
         }
 
         private void modifyName_button_Click(object sender, EventArgs e) {
@@ -101,11 +101,6 @@ namespace _0327_jótékonykodás {
 
         private void addName_button_Click(object sender, EventArgs e) {
             AddName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", actName_textBox.Text);
-        }
-
-        string[] GenStudentNames() {
-            var rnd = new Random();
-            GetNames("./diakNevek.txt");
         }
 
 
