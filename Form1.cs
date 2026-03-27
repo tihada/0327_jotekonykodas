@@ -22,5 +22,6 @@ namespace _0327_jótékonykodás {
 
             menürendszerrel: embereket felviszünk (mindkét fájlba), tudunk törölni, tudunk javítani, generál: 1-2 idős-diák
         */
+
     }
 }
