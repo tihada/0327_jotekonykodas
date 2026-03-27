@@ -87,6 +87,11 @@ namespace _0327_jótékonykodás {
             AddName(isStudent ? "./diakNevek.txt" : "./idosNevek.txt", actName_textBox.Text);
         }
 
+        string[] GenStudentNames() {
+            var rnd = new Random();
+            GetNames("./diakNevek.txt");
+        }
+
 
         /* feladat:
 * 2 fájl

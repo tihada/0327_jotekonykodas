@@ -36,6 +36,7 @@
             this.addName_button = new System.Windows.Forms.Button();
             this.modifyName_button = new System.Windows.Forms.Button();
             this.delName_button = new System.Windows.Forms.Button();
+            this.gen_toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,6 +44,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.emberekToolStripMenuItem,
+            this.gen_toolStripMenuItem,
             this.creators_ToolStripMenuItem,
             this.exit_ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -63,14 +65,14 @@
             // oldPpl_ToolStripMenuItem
             // 
             this.oldPpl_ToolStripMenuItem.Name = "oldPpl_ToolStripMenuItem";
-            this.oldPpl_ToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
+            this.oldPpl_ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.oldPpl_ToolStripMenuItem.Text = "Idős";
             this.oldPpl_ToolStripMenuItem.Click += new System.EventHandler(this.oldPpl_ToolStripMenuItem_Click);
             // 
             // student_ToolStripMenuItem
             // 
             this.student_ToolStripMenuItem.Name = "student_ToolStripMenuItem";
-            this.student_ToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
+            this.student_ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.student_ToolStripMenuItem.Text = "Diák";
             this.student_ToolStripMenuItem.Click += new System.EventHandler(this.student_ToolStripMenuItem_Click);
             // 
@@ -157,6 +159,12 @@
             this.delName_button.UseVisualStyleBackColor = false;
             this.delName_button.Click += new System.EventHandler(this.delName_button_Click);
             // 
+            // gen_toolStripMenuItem
+            // 
+            this.gen_toolStripMenuItem.Name = "gen_toolStripMenuItem";
+            this.gen_toolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.gen_toolStripMenuItem.Text = "Generálás";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,6 +203,7 @@
         private System.Windows.Forms.Button modifyName_button;
         private System.Windows.Forms.Button delName_button;
         private System.Windows.Forms.TextBox actName_textBox;
+        private System.Windows.Forms.ToolStripMenuItem gen_toolStripMenuItem;
     }
 }
 
